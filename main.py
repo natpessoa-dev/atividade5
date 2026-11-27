@@ -2,7 +2,7 @@ import pandas as pd
 import plotly.express as px
 import streamlit as st
 
-df = pd.read_csv('/content/WHO_time_series.csv')
+df = pd.read_csv('WHO_time_series.csv')
 
 fig1 = px.line(df, x = 'Date_reported', y = 'Cumulative_cases', color = 'Country',
                title = 'Dados de Covid-19 no mundo - Ano 2020')
