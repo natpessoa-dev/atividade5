@@ -4,6 +4,8 @@ import streamlit as st
 
 df = pd.read_csv('WHO_time_series.csv')
 
+df['Date_reported'] = pd.to_datetime(df['Date_reported'])
+
 fig1 = px.line(df, x = 'Date_reported', y = 'Cumulative_cases', color = 'Country',
                title = 'Dados de Covid-19 no mundo - Ano 2020')
 fig1.update_layout(xaxis_title = 'Data', yaxis_title = 'nº casos acumulados',
