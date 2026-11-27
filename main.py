@@ -12,3 +12,5 @@ fig1 = px.line(df, x = 'Date_reported', y = 'Cumulative_cases', color = 'Country
 fig1.update_layout(xaxis_title = 'Data', yaxis_title = 'nº casos acumulados',
                    title_font_size = 30)
 fig1.show()
+
+st.plotly_chart(fig1, use_container_width=True)
