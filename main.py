@@ -25,4 +25,11 @@ fig2.update_layout(xaxis_title = 'Data', yaxis_title = 'nº casos acumulados',
                    title_font_size = 30)
 fig2.show()
 
+filtro2 = df.query('(Country == "Brazil" or Country == "United States of America" or Country == "India") and Date_reported == "2020-07-31"')
+
+fig3 = px.pie(filtro2, values = 'Cumulative_deaths', names = 'Country', title = 'Mortes acumuladas por Covid-19 no dia 31/07/2020: EUA, Brasil e Índia')
+fig3.show()
+
+st.plotly_chart(fig3, use_container_width=True)
+
 st.plotly_chart(fig2, use_container_width=True)
